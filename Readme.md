@@ -15,3 +15,6 @@ This will run the `src/main.py` file and train a new model.
 
 The code for model evaluation is `src/model_evaluation.py`.
 
+# Results
+
+https://mateuszitelli.github.io/data-mining-project/
