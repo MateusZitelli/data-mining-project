@@ -32,7 +32,7 @@ X = v[to_use[:-1]]
 y = v[to_use[-1]]
 
 X_train, X_test, y_train, y_test = \
-sklearn.model_selection.train_test_split(X, y, random_state=10)
+sklearn.model_selection.train_test_split(X, y, random_state=1)
 automl = autosklearn.classification.AutoSklearnClassifier(
     delete_tmp_folder_after_terminate=False,
     delete_output_folder_after_terminate=False,
@@ -42,6 +42,7 @@ automl = autosklearn.classification.AutoSklearnClassifier(
     resampling_strategy_arguments={'folds': 4},
     tmp_folder="./shared/tmp",
     output_folder="./shared/")
+
 automl.fit(X_train.copy(), y_train.copy(), dataset_name='yeast')
 automl.refit(np.asarray(X_train), np.asarray(y_train))
 y_hat = automl.predict(X_test)

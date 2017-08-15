@@ -69,7 +69,7 @@ X = data[to_use[:-1]]
 y = data[to_use[-1]]
 
 X_train, X_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, random_state=1)
-automl_csf = joblib.load('/Users/mateus/dev/automl/projeto-mineracao/automl-2017-08-14 18:38:46.pkl')
+automl_csf = joblib.load('/Users/mateus/dev/automl/projeto-mineracao/model/automl-2017-08-14 18:38:46.pkl')
 
 y_test_pred = automl_csf.predict(X_test)
 y_test_pred_prob = automl_csf.predict_proba(X_test)
